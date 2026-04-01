@@ -191,6 +191,34 @@ section{padding:5.5rem 5%}
 .slabel.active,.slabel.done{color:var(--greentext)}
 .btn-st-close{background:transparent;color:var(--gray);border:1px solid var(--gray3);padding:.55rem 1.4rem;border-radius:var(--r2);font-size:.82rem;font-weight:600}
 .btn-st-close:hover{color:var(--white);border-color:var(--gray)}
+
+/* ── PAYMENT ── */
+.pay-section{margin-bottom:1.1rem}
+.pay-label{font-size:.7rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--gray);margin-bottom:.55rem;display:block}
+.pay-notice{background:var(--greendim);border:1px solid var(--greenborder);border-radius:var(--r2);padding:.6rem .9rem;font-size:.8rem;color:var(--greentext);margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem}
+.pay-btns{display:flex;gap:.7rem}
+.pay-btn{flex:1;background:var(--black4);border:1.5px solid var(--gray3);border-radius:var(--r2);padding:.75rem .9rem;text-align:center;cursor:pointer;transition:all .18s;font-family:'Barlow',sans-serif}
+.pay-btn:hover{border-color:var(--green);background:var(--greendim)}
+.pay-btn.active{border-color:var(--green);background:var(--greendim)}
+.pay-btn-icon{font-size:1.4rem;display:block;margin-bottom:.3rem}
+.pay-btn-name{font-size:.88rem;font-weight:700;color:var(--white);display:block;letter-spacing:.03em}
+.pay-btn-sub{font-size:.72rem;color:var(--gray);display:block;margin-top:.15rem}
+.pay-btn.active .pay-btn-name{color:var(--greentext)}
+.pay-btn.active .pay-btn-sub{color:var(--greentext);opacity:.7}
+.cash-detail{margin-top:.85rem;display:none}
+.cash-detail.show{display:block}
+.cash-exact{display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem}
+.cash-exact-label{font-size:.85rem;color:var(--white2);flex:1}
+.cash-toggle{display:flex;align-items:center;gap:.5rem;cursor:pointer}
+.cash-toggle input[type=checkbox]{width:18px;height:18px;accent-color:var(--green);cursor:pointer;flex-shrink:0}
+.cash-toggle span{font-size:.85rem;font-weight:600;color:var(--white2)}
+.cash-amount-wrap{display:flex;flex-direction:column;gap:.35rem}
+.cash-amount-hint{font-size:.75rem;color:var(--gray);line-height:1.5}
+.cash-change-info{background:var(--black4);border:1px solid var(--greenborder);border-radius:var(--r2);padding:.6rem .9rem;display:flex;justify-content:space-between;align-items:center;margin-top:.6rem}
+.cash-change-label{font-size:.8rem;color:var(--gray)}
+.cash-change-val{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:var(--greentext)}
+.cash-change-info.warn{border-color:rgba(214,68,68,.35);background:var(--reddim)}
+.cash-change-info.warn .cash-change-val{color:var(--red)}
 footer{background:var(--black2);border-top:1px solid var(--gray3);padding:4rem 5% 2rem}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:2.8rem}
 .footer-col h5{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:.08em;color:var(--white);margin-bottom:.9rem}
@@ -205,17 +233,27 @@ footer{background:var(--black2);border-top:1px solid var(--gray3);padding:4rem 5
 .toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(12px);background:var(--green);color:var(--white);padding:.65rem 1.4rem;border-radius:100px;font-weight:700;font-size:.85rem;z-index:9999;opacity:0;transition:all .28s;white-space:nowrap;pointer-events:none}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
+/* ── CONFIRM DIALOG ── */
+.confirm-ov{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:600;display:flex;align-items:center;justify-content:center;padding:1rem;opacity:0;pointer-events:none;transition:opacity .2s;backdrop-filter:blur(4px)}
+.confirm-ov.open{opacity:1;pointer-events:all}
+.confirm-box{background:var(--black3);border:1px solid rgba(214,68,68,.4);border-radius:var(--r);padding:2rem;max-width:360px;width:100%;text-align:center;transform:scale(.95);transition:transform .2s}
+.confirm-ov.open .confirm-box{transform:scale(1)}
+.confirm-icon{font-size:2.2rem;margin-bottom:.8rem}
+.confirm-box h3{font-size:1.6rem;margin-bottom:.5rem}
+.confirm-box p{color:var(--gray);font-size:.88rem;line-height:1.6;margin-bottom:1.5rem}
+.confirm-btns{display:flex;gap:.75rem}
+.confirm-yes{flex:1;background:var(--red);color:var(--white);padding:.75rem;border-radius:var(--r2);font-weight:700;font-size:.88rem;letter-spacing:.04em;text-transform:uppercase}
+.confirm-yes:hover{background:#c03333}
+.confirm-no{flex:1;background:var(--black4);color:var(--white2);border:1px solid var(--gray3);padding:.75rem;border-radius:var(--r2);font-weight:600;font-size:.88rem}
+.confirm-no:hover{border-color:var(--gray);color:var(--white)}
+
 /* ── ADMIN ── */
 .adm-ov{position:fixed;inset:0;background:var(--black);z-index:500;opacity:0;pointer-events:none;transition:opacity .22s;overflow:hidden;display:flex;flex-direction:column}
 .adm-ov.open{opacity:1;pointer-events:all}
-
-/* login */
 .adm-login{display:flex;align-items:center;justify-content:center;height:100%;padding:2rem;overflow-y:auto}
 .adm-login-box{background:var(--black3);border:1px solid var(--gray3);border-radius:var(--r);padding:2.3rem;width:100%;max-width:360px;text-align:center}
 .adm-login-box h2{font-size:2.3rem;margin-bottom:.35rem}
 .adm-login-box p{color:var(--gray);font-size:.85rem;margin-bottom:1.8rem}
-
-/* topbar */
 .adm-topbar{height:52px;min-height:52px;background:var(--black2);border-bottom:1px solid var(--gray3);display:flex;align-items:center;padding:0 1rem;gap:.9rem;flex-shrink:0;overflow:hidden}
 .adm-logo{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.08em;color:var(--white);white-space:nowrap}
 .adm-logo em{color:var(--greentext);font-style:normal;margin-left:.2rem}
@@ -226,64 +264,64 @@ footer{background:var(--black2);border-top:1px solid var(--gray3);padding:4rem 5
 .adm-topbar-right{margin-left:auto;display:flex;align-items:center;gap:.55rem;flex-shrink:0}
 .adm-sim-btn{background:var(--green3);color:var(--greentext);border:1px solid var(--greenborder);padding:.35rem .8rem;border-radius:var(--r2);font-size:.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
 .adm-sim-btn:hover{background:var(--green);color:var(--white)}
+/* sound toggle button */
+.adm-sound-btn{background:var(--black4);color:var(--white2);border:1px solid var(--gray3);padding:.35rem .75rem;border-radius:var(--r2);font-size:.72rem;font-weight:600;white-space:nowrap;display:flex;align-items:center;gap:.3rem}
+.adm-sound-btn:hover{border-color:var(--greentext);color:var(--greentext)}
+.adm-sound-btn.muted{color:var(--gray);border-color:var(--gray3)}
 .adm-close-btn{background:var(--black4);color:var(--white2);border:1px solid var(--gray3);padding:.35rem .75rem;border-radius:var(--r2);font-size:.72rem;font-weight:600;white-space:nowrap}
 .adm-close-btn:hover{border-color:var(--red);color:var(--red)}
 .adm-logout-btn{background:transparent;color:var(--gray);border:1px solid var(--gray3);padding:.35rem .75rem;border-radius:var(--r2);font-size:.72rem;font-weight:600;white-space:nowrap}
 .adm-logout-btn:hover{color:var(--red);border-color:var(--red)}
-
-/* stats bar */
 .adm-stats-bar{height:36px;min-height:36px;background:var(--black3);border-bottom:1px solid var(--gray3);display:flex;align-items:center;padding:0 1rem;gap:1.4rem;flex-shrink:0;overflow-x:auto;overflow-y:hidden}
 .adm-stats-bar::-webkit-scrollbar{display:none}
 .adm-stat{display:flex;align-items:center;gap:.4rem;color:var(--white2);font-size:.76rem;white-space:nowrap;flex-shrink:0}
 .adm-stat-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
 .dot-orange{background:var(--orange)}.dot-yellow{background:#e0c139}.dot-green{background:var(--greentext)}.dot-gray{background:var(--gray)}
 .adm-stat span:last-child{font-weight:700;color:var(--white)}
-
-/* main layout — flex row, fills remaining height */
 .adm-main{display:flex;flex:1;min-height:0;overflow:hidden}
 
-/* kanban area */
-.adm-kanban{flex:1;min-width:0;overflow-x:auto;overflow-y:hidden;display:flex;align-items:stretch;gap:0;padding:1rem}
+/* kanban */
+.adm-kanban{flex:1;min-width:0;overflow-x:auto;overflow-y:hidden;display:flex;align-items:stretch;gap:0;padding:1.2rem}
 .adm-kanban::-webkit-scrollbar{height:5px}
 .adm-kanban::-webkit-scrollbar-track{background:var(--black)}
 .adm-kanban::-webkit-scrollbar-thumb{background:var(--gray3);border-radius:3px}
 
-/* column */
-.kb-col{flex:0 0 230px;display:flex;flex-direction:column;padding-right:.9rem}
-.kb-col-hd{display:flex;align-items:center;gap:.45rem;margin-bottom:.65rem;padding:0 .1rem}
-.kb-col-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
-.kb-col-title{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
-.kb-col-count{background:var(--black4);color:var(--gray);border-radius:100px;font-size:.63rem;font-weight:700;padding:.08rem .42rem;border:1px solid var(--gray3);margin-left:.15rem}
-.kb-cards{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:.5rem}
+/* ── WIDER COLUMNS — only nuevos/preparacion/listos/entregado ── */
+.kb-col{flex:0 0 290px;display:flex;flex-direction:column;padding-right:1rem}
+.kb-col-hd{display:flex;align-items:center;gap:.5rem;margin-bottom:.75rem;padding:0 .1rem}
+.kb-col-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.kb-col-title{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.kb-col-count{background:var(--black4);color:var(--gray);border-radius:100px;font-size:.68rem;font-weight:700;padding:.1rem .5rem;border:1px solid var(--gray3);margin-left:.2rem}
+.kb-cards{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:.6rem}
 .kb-cards::-webkit-scrollbar{width:3px}
 .kb-cards::-webkit-scrollbar-thumb{background:var(--gray3);border-radius:2px}
 
-/* card */
-.kb-card{background:var(--black3);border:1px solid var(--gray3);border-radius:var(--r2);padding:.8rem;transition:border-color .2s;flex-shrink:0}
+/* card — bigger */
+.kb-card{background:var(--black3);border:1px solid var(--gray3);border-radius:var(--r);padding:1rem;transition:border-color .2s;flex-shrink:0}
 .kb-card:hover{border-color:var(--gray2)}
 .kb-card.is-new{border-color:var(--orange);animation:cardFlash 4s ease-out forwards}
-@keyframes cardFlash{0%{background:rgba(224,123,57,.1)}100%{background:var(--black3)}}
-.kb-card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:.55rem;gap:.4rem}
-.kb-card-id{font-family:'Barlow Condensed',sans-serif;font-size:.88rem;font-weight:700;color:var(--white);letter-spacing:.04em}
-.kb-type-badge{font-size:.58rem;font-weight:700;padding:.12rem .45rem;border-radius:100px;text-transform:uppercase;letter-spacing:.05em;white-space:nowrap;flex-shrink:0}
+@keyframes cardFlash{0%{background:rgba(224,123,57,.12)}100%{background:var(--black3)}}
+.kb-card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem;gap:.5rem}
+.kb-card-id{font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;color:var(--white);letter-spacing:.04em}
+.kb-type-badge{font-size:.65rem;font-weight:700;padding:.15rem .55rem;border-radius:100px;text-transform:uppercase;letter-spacing:.05em;white-space:nowrap;flex-shrink:0}
 .badge-llevar{background:var(--orangedim);color:var(--orange);border:1px solid rgba(224,123,57,.3)}
 .badge-local{background:var(--bluedim);color:#6aa3f0;border:1px solid rgba(59,125,216,.3)}
 .badge-domicilio{background:var(--greendim);color:var(--greentext);border:1px solid var(--greenborder)}
-.kb-client{display:flex;align-items:center;gap:.3rem;margin-bottom:.18rem}
-.kb-client-name{font-size:.8rem;font-weight:600;color:var(--white)}
-.kb-client-info{font-size:.68rem;color:var(--gray);margin-bottom:.6rem;padding-left:.95rem}
-.kb-items{display:flex;flex-direction:column;gap:.25rem;margin-bottom:.6rem}
-.kb-item-row{display:flex;justify-content:space-between;align-items:center;font-size:.74rem;gap:.3rem}
-.kb-item-name{color:var(--white2);display:flex;align-items:center;gap:.3rem;min-width:0}
+.kb-client{display:flex;align-items:center;gap:.4rem;margin-bottom:.25rem}
+.kb-client-name{font-size:.9rem;font-weight:600;color:var(--white)}
+.kb-client-info{font-size:.76rem;color:var(--gray);margin-bottom:.7rem;padding-left:1.1rem}
+.kb-items{display:flex;flex-direction:column;gap:.3rem;margin-bottom:.7rem}
+.kb-item-row{display:flex;justify-content:space-between;align-items:center;font-size:.82rem;gap:.4rem}
+.kb-item-name{color:var(--white2);display:flex;align-items:center;gap:.35rem;min-width:0}
 .kb-item-name-text{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.kb-item-qty{font-size:.62rem;background:var(--black4);border:1px solid var(--gray3);border-radius:100px;padding:.04rem .38rem;color:var(--gray);font-weight:600;flex-shrink:0}
-.kb-item-price{color:var(--gray);flex-shrink:0;font-size:.72rem}
-.kb-note{background:var(--black4);border-left:2px solid var(--green);padding:.3rem .55rem;border-radius:0 var(--r3) var(--r3) 0;font-size:.7rem;color:var(--gray);margin-bottom:.6rem;font-style:italic}
-.kb-card-foot{display:flex;align-items:center;justify-content:space-between}
-.kb-time{font-size:.66rem;color:var(--gray)}
-.kb-total{font-family:'Bebas Neue',sans-serif;font-size:1rem;color:var(--greentext)}
-.kb-card-actions{display:flex;gap:.35rem;margin-top:.6rem;flex-wrap:wrap}
-.ka-btn{padding:.28rem .6rem;border-radius:var(--r3);font-size:.66rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border:none;white-space:nowrap}
+.kb-item-qty{font-size:.68rem;background:var(--black4);border:1px solid var(--gray3);border-radius:100px;padding:.05rem .42rem;color:var(--gray);font-weight:600;flex-shrink:0}
+.kb-item-price{color:var(--gray);flex-shrink:0;font-size:.8rem}
+.kb-note{background:var(--black4);border-left:2px solid var(--green);padding:.35rem .65rem;border-radius:0 var(--r3) var(--r3) 0;font-size:.78rem;color:var(--gray);margin-bottom:.7rem;font-style:italic}
+.kb-card-foot{display:flex;align-items:center;justify-content:space-between;margin-top:.2rem}
+.kb-time{font-size:.72rem;color:var(--gray)}
+.kb-total{font-family:'Bebas Neue',sans-serif;font-size:1.15rem;color:var(--greentext)}
+.kb-card-actions{display:flex;gap:.4rem;margin-top:.7rem;flex-wrap:wrap}
+.ka-btn{padding:.35rem .75rem;border-radius:var(--r3);font-size:.74rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border:none;white-space:nowrap}
 .ka-confirm{background:var(--greendim);color:var(--greentext);border:1px solid var(--greenborder)}
 .ka-confirm:hover{background:var(--green);color:var(--white)}
 .ka-ready{background:var(--bluedim);color:#6aa3f0;border:1px solid rgba(59,125,216,.3)}
@@ -292,14 +330,14 @@ footer{background:var(--black2);border-top:1px solid var(--gray3);padding:4rem 5
 .ka-deliver:hover{background:var(--green);color:var(--white)}
 .ka-cancel{background:var(--reddim);color:var(--red);border:1px solid rgba(214,68,68,.3)}
 .ka-cancel:hover{background:var(--red);color:var(--white)}
-.kb-empty{text-align:center;color:var(--gray3);padding:1.2rem .5rem;font-size:.72rem;border:1px dashed var(--gray3);border-radius:var(--r2)}
+.kb-empty{text-align:center;color:var(--gray3);padding:1.5rem .5rem;font-size:.78rem;border:1px dashed var(--gray3);border-radius:var(--r2)}
 
 /* sidebar */
-.adm-sidebar{width:220px;flex:0 0 220px;background:var(--black2);border-left:1px solid var(--gray3);overflow-y:auto;padding:1rem;display:flex;flex-direction:column;gap:0}
+.adm-sidebar{width:230px;flex:0 0 230px;background:var(--black2);border-left:1px solid var(--gray3);overflow-y:auto;padding:1.1rem;display:flex;flex-direction:column}
 .adm-sidebar::-webkit-scrollbar{width:3px}
 .adm-sidebar::-webkit-scrollbar-thumb{background:var(--gray3);border-radius:2px}
 .adm-sb-title{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);margin-bottom:.85rem}
-.adm-sb-stat{display:flex;justify-content:space-between;align-items:center;padding:.4rem 0;border-bottom:1px solid var(--gray3);font-size:.8rem}
+.adm-sb-stat{display:flex;justify-content:space-between;align-items:center;padding:.42rem 0;border-bottom:1px solid var(--gray3);font-size:.82rem}
 .adm-sb-stat:last-of-type{border-bottom:none}
 .adm-sb-stat-label{color:rgba(238,237,230,.45)}
 .adm-sb-stat-val{font-weight:700;color:var(--white)}
@@ -307,60 +345,57 @@ footer{background:var(--black2);border-top:1px solid var(--gray3);padding:4rem 5
 .adm-sb-section{margin-top:1.1rem}
 .adm-sb-popular{display:flex;flex-direction:column;gap:.6rem}
 .pop-item{display:flex;align-items:center;gap:.55rem}
-.pop-item-img{width:26px;height:26px;border-radius:var(--r3);object-fit:cover;flex-shrink:0}
-.pop-item-name{font-size:.76rem;color:var(--white2);flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.pop-item-count{font-size:.68rem;font-weight:700;color:var(--orange);flex-shrink:0}
-.pop-bar{height:2.5px;background:var(--gray3);border-radius:2px;margin-top:.28rem;overflow:hidden}
+.pop-item-img{width:28px;height:28px;border-radius:var(--r3);object-fit:cover;flex-shrink:0}
+.pop-item-name{font-size:.78rem;color:var(--white2);flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pop-item-count{font-size:.7rem;font-weight:700;color:var(--orange);flex-shrink:0}
+.pop-bar{height:2.5px;background:var(--gray3);border-radius:2px;margin-top:.3rem;overflow:hidden}
 .pop-bar-fill{height:100%;background:var(--orange);border-radius:2px}
 
-/* sidebar panel toggle for mobile — shows as bottom sheet */
-.adm-sb-toggle{display:none;align-items:center;justify-content:center;gap:.5rem;background:var(--black3);border-top:1px solid var(--gray3);padding:.6rem;font-size:.75rem;font-weight:600;color:var(--gray);cursor:pointer;flex-shrink:0}
+/* revenue stats tabs */
+.rev-tabs{display:flex;gap:.35rem;margin-bottom:.85rem}
+.rev-tab{flex:1;background:var(--black4);border:1px solid var(--gray3);border-radius:var(--r3);padding:.3rem .2rem;font-size:.62rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gray);cursor:pointer;text-align:center;transition:all .15s}
+.rev-tab:hover{border-color:var(--greentext);color:var(--greentext)}
+.rev-tab.active{background:var(--greendim);border-color:var(--greenborder);color:var(--greentext)}
+.rev-cards{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:.85rem}
+.rev-card{background:var(--black4);border:1px solid var(--gray3);border-radius:var(--r3);padding:.6rem .7rem}
+.rev-card-label{font-size:.6rem;color:var(--gray);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.25rem}
+.rev-card-val{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;color:var(--white);line-height:1}
+.rev-card-val.green{color:var(--greentext)}
+.rev-card.full{grid-column:1/-1}
+.rev-divider{border:none;border-top:1px solid var(--gray3);margin:.7rem 0}
+
+/* mobile sheet toggle */
+.adm-sb-toggle{display:none;align-items:center;justify-content:center;gap:.5rem;background:var(--black3);border-top:1px solid var(--gray3);padding:.65rem;font-size:.78rem;font-weight:600;color:var(--gray);cursor:pointer;flex-shrink:0}
 .adm-sb-toggle:hover{color:var(--greentext)}
 .adm-sb-sheet{display:none}
 
 /* ── RESPONSIVE ── */
-@media(max-width:1100px){
-  .adm-sidebar{width:190px;flex:0 0 190px}
-  .kb-col{flex:0 0 210px}
-}
+@media(max-width:1200px){.adm-sidebar{width:200px;flex:0 0 200px}.kb-col{flex:0 0 260px}}
 @media(max-width:900px){
   .footer-grid{grid-template-columns:1fr 1fr}
-  /* hide live label on small screens */
   .adm-live{display:none}
-  .adm-time{font-size:.85rem}
-  /* sidebar collapses — show toggle button */
   .adm-sidebar{display:none}
   .adm-sb-toggle{display:flex}
-  /* summary sheet shown below kanban when toggled */
   .adm-sb-sheet{position:fixed;bottom:0;left:0;right:0;background:var(--black2);border-top:1px solid var(--gray3);z-index:10;max-height:55vh;overflow-y:auto;padding:1rem;display:none}
   .adm-sb-sheet.open{display:block}
-  .adm-sb-sheet-grid{display:grid;grid-template-columns:1fr 1fr;gap:.4rem 1.5rem}
+  .kb-col{flex:0 0 250px}
 }
 @media(max-width:768px){
-  .nav-links{display:none}
-  .ham{display:flex}
+  .nav-links{display:none}.ham{display:flex}
   .hero h1{font-size:clamp(3.2rem,14vw,5.5rem)}
-  .co-grid{grid-template-columns:1fr}
-  .fg.full{grid-column:1}
-  /* topbar on mobile */
-  .adm-logo{font-size:1rem}
-  .adm-badge{display:none}
-  .adm-time{font-size:.8rem}
-  .adm-sim-btn span{display:none}
-  /* kanban columns narrower */
-  .kb-col{flex:0 0 190px}
-  .adm-topbar{gap:.6rem;padding:0 .8rem}
-  .adm-topbar-right{gap:.4rem}
+  .co-grid{grid-template-columns:1fr}.fg.full{grid-column:1}
+  .adm-logo{font-size:1rem}.adm-badge{display:none}
+  .kb-col{flex:0 0 220px}
+  .adm-topbar{gap:.5rem;padding:0 .7rem}.adm-topbar-right{gap:.35rem}
 }
 @media(max-width:520px){
   .footer-grid{grid-template-columns:1fr}
   .featured-grid,.menu-grid{grid-template-columns:1fr}
-  .modal-foot{flex-direction:column}
-  .btn-add-cart{width:100%}
-  .kb-col{flex:0 0 170px}
-  .adm-sim-btn{padding:.32rem .6rem;font-size:.68rem}
-  .adm-close-btn,.adm-logout-btn{padding:.32rem .6rem;font-size:.68rem}
-  .adm-sb-sheet-grid{grid-template-columns:1fr}
+  .modal-foot{flex-direction:column}.btn-add-cart{width:100%}
+  .kb-col{flex:0 0 190px}
+  .adm-sim-btn,.adm-close-btn,.adm-logout-btn,.adm-sound-btn{padding:.3rem .55rem;font-size:.66rem}
+  .addr-3col{grid-template-columns:1fr 1fr!important}
+  .addr-3col .addr-cp{grid-column:1/-1}
 }
 </style>
 </head>
@@ -428,7 +463,6 @@ footer{background:var(--black2);border-top:1px solid var(--gray3);padding:4rem 5
 
 <footer>
   <div class="footer-grid">
-    <div class="footer-brand" style="grid-column:1/-1 !important;display:none"></div>
     <div style="grid-column:1/3">
       <a class="logo" href="#" style="font-size:1.9rem;display:block;margin-bottom:.7rem"><em>B</em>RUTAL.</a>
       <p style="color:var(--gray);font-size:.82rem;line-height:1.7;max-width:260px">Hamburguesería urbana. Nacida en la calle, criada en la cocina. Sin pretensiones, solo sabor.</p>
@@ -443,7 +477,7 @@ footer{background:var(--black2);border-top:1px solid var(--gray3);padding:4rem 5
 </footer>
 
 <!-- PRODUCT MODAL -->
-<div class="overlay" id="prod-modal" onclick="if(event.target.id==='prod-modal'){closePM();}">
+<div class="overlay" id="prod-modal" onclick="if(event.target.id==='prod-modal')closePM()">
   <div class="modal" onclick="event.stopPropagation()">
     <button class="modal-x" onclick="closePM()">✕</button>
     <img class="modal-img" id="m-img" src="" alt=""/>
@@ -475,7 +509,7 @@ footer{background:var(--black2);border-top:1px solid var(--gray3);padding:4rem 5
 </div>
 
 <!-- CHECKOUT -->
-<div class="overlay" id="checkout-ov" onclick="if(event.target.id==='checkout-ov')closeCO();">
+<div class="overlay" id="checkout-ov" onclick="if(event.target.id==='checkout-ov')closeCO()">
   <div class="modal checkout-modal" onclick="event.stopPropagation()">
     <button class="modal-x" onclick="closeCO()">✕</button>
     <div class="modal-body">
@@ -490,10 +524,61 @@ footer{background:var(--black2);border-top:1px solid var(--gray3);padding:4rem 5
             <button class="otype-btn" id="ot-local" onclick="setOT('local')">🏪 Recoger en local</button>
           </div>
         </div>
-        <div class="fg full" id="addr-group"><label class="flabel">Dirección</label><input class="finput" id="co-addr" type="text" placeholder="Calle, número, piso..." oninput="calcDel()"/></div>
+        <div class="fg full" id="addr-group">
+          <div class="addr-3col" style="display:grid;grid-template-columns:110px 1fr 90px;gap:.7rem">
+            <div class="fg addr-cp">
+              <label class="flabel">Código postal</label>
+              <input class="finput" id="co-cp" type="text" maxlength="5" placeholder="29001" oninput="calcDelCP()"/>
+            </div>
+            <div class="fg">
+              <label class="flabel">Calle</label>
+              <input class="finput" id="co-calle" type="text" placeholder="Calle Larios"/>
+            </div>
+            <div class="fg">
+              <label class="flabel">Número / Puerta</label>
+              <input class="finput" id="co-num" type="text" placeholder="4, 2ºB"/>
+            </div>
+          </div>
+        </div>
         <div id="dinfo-wrap" style="grid-column:1/-1"></div>
         <div class="fg full"><label class="flabel">Notas</label><textarea class="finput" id="co-notes" rows="2" placeholder="Sin cebolla, puerta 3B..."></textarea></div>
       </div>
+
+      <!-- PAGO -->
+      <div class="pay-section" style="margin-top:1.1rem">
+        <div class="pay-notice">💳 Pago contra reembolso — pagas cuando recibes tu pedido</div>
+        <span class="pay-label">Método de pago</span>
+        <div class="pay-btns">
+          <button class="pay-btn active" id="pay-card" onclick="setPayMethod('card')">
+            <span class="pay-btn-icon">💳</span>
+            <span class="pay-btn-name">Tarjeta</span>
+            <span class="pay-btn-sub">TPV portátil en puerta</span>
+          </button>
+          <button class="pay-btn" id="pay-cash" onclick="setPayMethod('cash')">
+            <span class="pay-btn-icon">💵</span>
+            <span class="pay-btn-name">Efectivo</span>
+            <span class="pay-btn-sub">El repartidor lleva cambio</span>
+          </button>
+        </div>
+        <div class="cash-detail" id="cash-detail">
+          <div class="cash-exact">
+            <label class="cash-toggle" for="cash-exact-chk">
+              <input type="checkbox" id="cash-exact-chk" onchange="toggleCashExact()"/>
+              <span>Pago con el importe exacto</span>
+            </label>
+          </div>
+          <div class="cash-amount-wrap" id="cash-amount-wrap" style="display:none">
+            <label class="flabel">¿Con cuánto pagas?</label>
+            <input class="finput" id="cash-amount" type="number" min="0" step="0.5" placeholder="Ej: 20" oninput="calcChange()"/>
+            <p class="cash-amount-hint">Indica el billete o cantidad que vas a dar al repartidor para que lleve el cambio justo.</p>
+            <div id="cash-change-info" class="cash-change-info" style="display:none">
+              <span class="cash-change-label">Cambio a devolver</span>
+              <span class="cash-change-val" id="cash-change-val"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="co-summary">
         <h4>RESUMEN</h4>
         <div id="co-sum-items"></div>
@@ -501,7 +586,11 @@ footer{background:var(--black2);border-top:1px solid var(--gray3);padding:4rem 5
         <div style="display:flex;justify-content:space-between;padding:.28rem 0;font-size:.82rem;color:var(--gray)"><span>Envío</span><span id="co-ship"></span></div>
         <div style="display:flex;justify-content:space-between;padding:.6rem 0 0;font-family:'Bebas Neue',sans-serif;font-size:1.35rem;border-top:1px solid var(--gray3);margin-top:.3rem"><span>TOTAL</span><span id="co-total" style="color:var(--greentext)"></span></div>
       </div>
-      <div style="margin-top:1.3rem"><button class="btn-primary" style="width:100%;padding:.9rem;font-size:.9rem;border-radius:var(--r)" onclick="placeOrder()">Confirmar pedido →</button></div>
+      <div style="margin-top:1.3rem;display:flex;align-items:center;gap:.6rem;background:var(--black4);border:1px solid var(--gray3);border-radius:var(--r2);padding:.7rem .9rem;font-size:.82rem;color:var(--white2)">
+        <span>💳</span>
+        <span>Pago <strong>contra reembolso</strong> — pagas cuando recibes tu pedido</span>
+      </div>
+      <div style="margin-top:.75rem"><button class="btn-primary" style="width:100%;padding:.9rem;font-size:.9rem;border-radius:var(--r)" onclick="placeOrder()">Confirmar pedido →</button></div>
     </div>
   </div>
 </div>
@@ -524,61 +613,271 @@ footer{background:var(--black2);border-top:1px solid var(--gray3);padding:4rem 5
   </div>
 </div>
 
+<!-- CANCEL CONFIRM DIALOG -->
+<div class="confirm-ov" id="confirm-ov">
+  <div class="confirm-box">
+    <div class="confirm-icon">⚠️</div>
+    <h3>¿CANCELAR PEDIDO?</h3>
+    <p id="confirm-msg">Esta acción no se puede deshacer. El pedido quedará marcado como cancelado.</p>
+    <div class="confirm-btns">
+      <button class="confirm-no" onclick="closeConfirm()">No, mantener</button>
+      <button class="confirm-yes" onclick="confirmCancel()">Sí, cancelar</button>
+    </div>
+  </div>
+</div>
+
 <!-- ADMIN FAB -->
 <div style="position:fixed;bottom:1.8rem;right:1.8rem;z-index:50">
-  <button id="adm-fab" onclick="openAdmin()" style="background:var(--black3);color:var(--gray);border:1px solid var(--gray3);width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem" title="Panel cocina">⚙</button>
+  <button onclick="openAdmin()" style="background:var(--black3);color:var(--gray);border:1px solid var(--gray3);width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:all .2s" onmouseover="this.style.background='var(--green)';this.style.color='var(--white)';this.style.borderColor='var(--green)'" onmouseout="this.style.background='var(--black3)';this.style.color='var(--gray)';this.style.borderColor='var(--gray3)'" title="Panel cocina">⚙</button>
 </div>
 
 <!-- ADMIN PANEL -->
 <div class="adm-ov" id="adm-ov">
   <div id="adm-inner" style="display:flex;flex-direction:column;height:100%;min-height:0"></div>
-  <!-- mobile summary sheet -->
   <div class="adm-sb-sheet" id="adm-sb-sheet"></div>
 </div>
 
 <div class="toast" id="toast"></div>
 
 <script>
+// ── DATA ──────────────────────────────────────────────────────────────────────
 const PRODUCTS=[
   {id:1,name:"La Bestia",cat:"Hamburguesas",price:12.90,badge:"Más pedida",desc:"Ternera madurada, cheddar ahumado, bacon crujiente, cebolla caramelizada y nuestra salsa brutal.",img:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80",ingredients:["Ternera 200g","Cheddar ahumado","Bacon","Cebolla caramelizada","Lechuga","Tomate","Pan brioche"],extras:[{name:"Doble ternera",price:3.50},{name:"Extra bacon",price:1.50},{name:"Extra queso",price:1.00},{name:"Huevo frito",price:1.20}]},
   {id:2,name:"La Verde",cat:"Hamburguesas",price:11.50,badge:null,desc:"Jalapeños encurtidos, guacamole fresco, pepper jack y salsa verde. Picante de verdad.",img:"https://images.unsplash.com/photo-1550547660-d9450f859349?w=600&q=80",ingredients:["Ternera 200g","Jalapeños","Guacamole","Pepper Jack","Salsa verde","Pan negro"],extras:[{name:"Extra jalapeños",price:0.80},{name:"Doble guacamole",price:1.50},{name:"Extra queso",price:1.00}]},
-  {id:3,name:"La Oscura",cat:"Hamburguesas",price:13.50,badge:"Nueva",desc:"Carne negra, queso azul, mermelada de higos, rúcula y mostaza antigua. Elegante y brutal.",img:"https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=600&q=80",ingredients:["Ternera 220g","Pan negro","Queso azul","Mermelada de higos","Rúcula"],extras:[{name:"Doble ternera",price:3.50},{name:"Extra queso azul",price:1.50}]},
-  {id:4,name:"Combo Bestia",cat:"Combos",price:17.90,badge:"Oferta",desc:"La Bestia + patatas bravas + refresco. El combo perfecto para no moverte del sofá.",img:"https://images.unsplash.com/photo-1606755962773-d324e9a13086?w=600&q=80",ingredients:["Burger La Bestia","Patatas bravas","Refresco 33cl"],extras:[{name:"Ampliar refresco",price:0.50},{name:"Cambiar por batido",price:1.50}]},
+  {id:3,name:"La Oscura",cat:"Hamburguesas",price:13.50,badge:"Nueva",desc:"Carne negra, queso azul, mermelada de higos, rúcula y mostaza antigua.",img:"https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=600&q=80",ingredients:["Ternera 220g","Pan negro","Queso azul","Mermelada de higos","Rúcula"],extras:[{name:"Doble ternera",price:3.50},{name:"Extra queso azul",price:1.50}]},
+  {id:4,name:"Combo Bestia",cat:"Combos",price:17.90,badge:"Oferta",desc:"La Bestia + patatas bravas + refresco. El combo perfecto.",img:"https://images.unsplash.com/photo-1606755962773-d324e9a13086?w=600&q=80",ingredients:["Burger La Bestia","Patatas bravas","Refresco 33cl"],extras:[{name:"Ampliar refresco",price:0.50},{name:"Cambiar por batido",price:1.50}]},
   {id:5,name:"Combo Verde",cat:"Combos",price:16.50,badge:null,desc:"La Verde + aros de cebolla + refresco. Picante y completo.",img:"https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=600&q=80",ingredients:["Burger La Verde","Aros de cebolla","Refresco 33cl"],extras:[{name:"Ampliar refresco",price:0.50},{name:"Cambiar por batido",price:1.50}]},
-  {id:6,name:"Patatas Bravas",cat:"Entrantes",price:4.50,badge:null,desc:"Salsa brava casera y alioli de ajo negro. No son unas patatas normales.",img:"https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=600&q=80",ingredients:["Patatas","Salsa brava","Alioli ajo negro","Cebollino"],extras:[{name:"Extra salsa",price:0.70}]},
+  {id:6,name:"Patatas Bravas",cat:"Entrantes",price:4.50,badge:null,desc:"Salsa brava casera y alioli de ajo negro.",img:"https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=600&q=80",ingredients:["Patatas","Salsa brava","Alioli ajo negro","Cebollino"],extras:[{name:"Extra salsa",price:0.70}]},
   {id:7,name:"Aros de Cebolla",cat:"Entrantes",price:4.90,badge:null,desc:"Panko japonés, fritos perfectos. Con salsa ranch de jalapeño.",img:"https://images.unsplash.com/photo-1639024471283-03518883512d?w=600&q=80",ingredients:["Cebolla dulce","Panko","Cerveza","Salsa ranch jalapeño"],extras:[{name:"Extra salsa",price:0.70}]},
   {id:8,name:"Coca-Cola",cat:"Bebidas",price:2.50,badge:null,desc:"33cl bien fría.",img:"https://images.unsplash.com/photo-1629203851122-3726ecdf080e?w=600&q=80",ingredients:["Coca-Cola 33cl"],extras:[]},
   {id:9,name:"Batido Brutal",cat:"Bebidas",price:5.50,badge:null,desc:"Vainilla, fresa o chocolate. Espeso. Helado artesano.",img:"https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=600&q=80",ingredients:["Helado artesano","Leche entera","Sirope"],extras:[{name:"Doble helado",price:1.50}]},
   {id:10,name:"Brownie",cat:"Postres",price:4.50,badge:null,desc:"Caliente, con nueces y bola de helado de vainilla.",img:"https://images.unsplash.com/photo-1564355808539-22fda35bed7e?w=600&q=80",ingredients:["Chocolate 70%","Nueces","Mantequilla","Helado vainilla"],extras:[{name:"Extra helado",price:1.50}]},
 ];
 const CATS=["Todo","Hamburguesas","Combos","Entrantes","Bebidas","Postres"];
-const REST={lat:36.7213,lng:-4.4214};
-const DRULES=[{max:2,price:1.99,label:"Hasta 2 km"},{max:5,price:2.99,label:"2–5 km"},{max:8,price:3.99,label:"5–8 km"},{max:Infinity,price:null,label:"Fuera de zona"}];
+// ── ZONAS DE ENVÍO POR CÓDIGO POSTAL ─────────────────────────────────────────
+// Edita este objeto para añadir/quitar zonas y precios
+const DELIVERY_ZONES = {
+  // Zona 1 — Málaga centro
+  '29001':{price:1.99,label:'Málaga Centro'},
+  '29002':{price:1.99,label:'Málaga Centro'},
+  '29003':{price:1.99,label:'Málaga Centro'},
+  '29004':{price:1.99,label:'Málaga Centro'},
+  '29005':{price:1.99,label:'Málaga Centro'},
+  '29006':{price:1.99,label:'Málaga Centro'},
+  // Zona 2 — Málaga ciudad
+  '29007':{price:2.49,label:'Málaga Este'},
+  '29008':{price:2.49,label:'Málaga Este'},
+  '29009':{price:2.49,label:'Málaga Norte'},
+  '29010':{price:2.49,label:'Málaga Norte'},
+  '29011':{price:2.49,label:'Málaga Oeste'},
+  '29012':{price:2.49,label:'Málaga Oeste'},
+  '29013':{price:2.49,label:'Málaga Sur'},
+  '29014':{price:2.49,label:'Teatinos'},
+  '29015':{price:2.49,label:'Churriana'},
+  '29016':{price:2.49,label:'Málaga'},
+  '29017':{price:2.49,label:'Málaga'},
+  '29018':{price:2.49,label:'Málaga'},
+  '29019':{price:2.49,label:'Málaga'},
+  // Zona 3 — Extrarradio
+  '29190':{price:3.49,label:'Alhaurín de la Torre'},
+  '29120':{price:3.49,label:'Alhaurín el Grande'},
+  '29140':{price:3.49,label:'Campanillas'},
+  '29196':{price:3.49,label:'Málaga Aeropuerto'},
+  '29620':{price:3.99,label:'Torremolinos'},
+  '29630':{price:3.99,label:'Benalmádena'},
+  '29640':{price:3.99,label:'Fuengirola'},
+  // Añade más códigos postales aquí
+};
 
+// ── STATE ─────────────────────────────────────────────────────────────────────
 let cart=[],mQty=1,mProd=null,mExtras=[],activeCat="Todo",oType="domicilio",shipCost=1.99;
 let orders=loadOrders(),adminAuth=false,curOId=null,admTimer=null;
+let soundEnabled=true;          // sound toggle state
+let pendingCancelId=null;        // id waiting for cancel confirmation
+let payMethod='card';            // 'card' | 'cash'
+let cashExact=false;             // customer has exact change
+let cashAmount=0;                // amount customer will pay with
 
-function loadOrders(){
-  const s=localStorage.getItem('bb2_orders');
-  if(s) return JSON.parse(s);
-  const seed=[
-    {n:"Marcos Ruiz",ph:"600777222",t:"llevar",its:[{id:6,q:1},{id:8,q:1}],nt:"",st:"preparacion"},
-    {n:"Ana García",ph:"611222333",t:"domicilio",its:[{id:1,q:2},{id:8,q:2}],nt:"Sin cebolla",st:"listos"},
-    {n:"Bruno",ph:"679702207",t:"local",its:[{id:2,q:1}],nt:"",st:"entregado"},
-    {n:"Miranditaculita",ph:"640766157",t:"local",its:[{id:6,q:1}],nt:"A todo",st:"entregado"},
-    {n:"Paco",ph:"688566666",t:"local",its:[{id:2,q:1}],nt:"",st:"entregado"},
-  ];
-  return seed.map((o,i)=>{
-    const items=o.its.map(it=>{const p=PRODUCTS.find(x=>x.id===it.id);return{id:p.id,name:p.name,img:p.img,unitPrice:p.price,qty:it.q,lineTotal:p.price*it.q,extras:[]};});
-    const sub=items.reduce((a,x)=>a+x.lineTotal,0);
-    return{id:'BB-'+Math.random().toString(36).substr(2,5).toUpperCase(),name:o.n,phone:o.ph,address:o.t==='domicilio'?'Calle Larios 12, Málaga':'',type:o.t,items,notes:o.nt,subtotal:sub,shipping:o.t==='domicilio'?1.99:0,total:sub+(o.t==='domicilio'?1.99:0),status:o.st,time:rTime(),timestamp:Date.now()-Math.random()*3.6e6,isNew:false};
-  });
+// ── AUDIO ─────────────────────────────────────────────────────────────────────
+// Generates a short notification beep using Web Audio API — no external files needed
+let audioCtx=null;
+function getAudioCtx(){
+  if(!audioCtx) audioCtx=new(window.AudioContext||window.webkitAudioContext)();
+  return audioCtx;
 }
-function saveOrders(){localStorage.setItem('bb2_orders',JSON.stringify(orders));}
+function playNewOrderSound(){
+  if(!soundEnabled) return;
+  try{
+    const ctx=getAudioCtx();
+    // Three quick ascending beeps
+    const beeps=[{f:520,t:0},{f:660,t:0.15},{f:880,t:0.3}];
+    beeps.forEach(({f,t})=>{
+      const osc=ctx.createOscillator();
+      const gain=ctx.createGain();
+      osc.connect(gain); gain.connect(ctx.destination);
+      osc.type='sine';
+      osc.frequency.setValueAtTime(f,ctx.currentTime+t);
+      gain.gain.setValueAtTime(0,ctx.currentTime+t);
+      gain.gain.linearRampToValueAtTime(0.35,ctx.currentTime+t+0.02);
+      gain.gain.linearRampToValueAtTime(0,ctx.currentTime+t+0.18);
+      osc.start(ctx.currentTime+t);
+      osc.stop(ctx.currentTime+t+0.2);
+    });
+  }catch(e){}
+}
+function toggleSound(){
+  soundEnabled=!soundEnabled;
+  const btn=document.getElementById('sound-btn');
+  if(btn){
+    btn.textContent=soundEnabled?'🔔 Sonido ON':'🔕 Sonido OFF';
+    btn.classList.toggle('muted',!soundEnabled);
+  }
+}
+
+// ── ORDERS ────────────────────────────────────────────────────────────────────
+// Storage keys:
+//   bb2_orders        → today's active orders (reset at midnight)
+//   bb2_history_YYYY-MM-DD → archived orders per day
+//   bb2_last_date     → last known date (for midnight reset detection)
+
+function todayKey(){
+  const d=new Date();
+  return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+}
 function rTime(){return String(12+Math.floor(Math.random()*8)).padStart(2,'0')+':'+String(Math.floor(Math.random()*60)).padStart(2,'0');}
 
-document.addEventListener('DOMContentLoaded',()=>{renderFeatured();renderCats();renderMenu("Todo");updCount();});
+function checkMidnightReset(){
+  const today=todayKey();
+  const last=localStorage.getItem('bb2_last_date');
+  if(last && last!==today){
+    // Archive yesterday's orders into history
+    const old=JSON.parse(localStorage.getItem('bb2_orders')||'[]');
+    if(old.length>0){
+      localStorage.setItem('bb2_history_'+last, JSON.stringify(old));
+    }
+    // Clear today's orders
+    localStorage.removeItem('bb2_orders');
+    orders=[];
+    if(adminAuth && document.getElementById('adm-ov').classList.contains('open')){
+      renderAdmPanel();
+      toast('🌅 Nuevo día — pedidos reiniciados');
+    }
+  }
+  localStorage.setItem('bb2_last_date', today);
+}
 
+function loadOrders(){
+  checkMidnightReset();
+  const s=localStorage.getItem('bb2_orders');
+  if(s) return JSON.parse(s);
+  // First run: seed today with demo orders AND create demo history for ayer/semana/mes
+  _seedHistoricalDemo();
+  return [];
+}
+
+function _seedHistoricalDemo(){
+  // Only seed once
+  if(localStorage.getItem('bb2_demo_seeded')) return;
+  localStorage.setItem('bb2_demo_seeded','1');
+  const demoOrders=(daysAgo,count)=>{
+    const arr=[];
+    for(let i=0;i<count;i++){
+      const p=PRODUCTS[Math.floor(Math.random()*5)];
+      const p2=PRODUCTS[Math.floor(Math.random()*5)];
+      const types=['local','llevar','domicilio'];
+      const t=types[Math.floor(Math.random()*3)];
+      const ship=t==='domicilio'?1.99:0;
+      const sub=p.price+(Math.random()>.5?p2.price:0);
+      const d=new Date();d.setDate(d.getDate()-daysAgo);d.setHours(12+Math.floor(Math.random()*8),Math.floor(Math.random()*60),0,0);
+      arr.push({
+        id:'BB-'+Math.random().toString(36).substr(2,5).toUpperCase(),
+        name:['Carlos V.','Lucía M.','Rubén K.','Sara P.','Diego F.','Ana G.','Marcos R.'][Math.floor(Math.random()*7)],
+        phone:'60'+Math.floor(1e7+Math.random()*9e7),
+        address:t==='domicilio'?'Calle Larios 5, Málaga':'',
+        type:t,notes:'',
+        items:[{id:p.id,name:p.name,img:p.img,unitPrice:p.price,qty:1,lineTotal:p.price,extras:[]}],
+        subtotal:sub,shipping:ship,total:sub+ship,
+        payment:{method:'card'},
+        status:'entregado',
+        time:String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0'),
+        timestamp:d.getTime(),isNew:false
+      });
+    }
+    return arr;
+  };
+  // Seed: yesterday (6 orders), 2-7 days ago (4-8/day), 8-30 days ago (3-6/day)
+  const dateKey=(daysAgo)=>{const d=new Date();d.setDate(d.getDate()-daysAgo);return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');};
+  if(!localStorage.getItem('bb2_history_'+dateKey(1))) localStorage.setItem('bb2_history_'+dateKey(1),JSON.stringify(demoOrders(1,6)));
+  for(let d=2;d<=7;d++) if(!localStorage.getItem('bb2_history_'+dateKey(d))) localStorage.setItem('bb2_history_'+dateKey(d),JSON.stringify(demoOrders(d,4+Math.floor(Math.random()*5))));
+  for(let d=8;d<=30;d++) if(!localStorage.getItem('bb2_history_'+dateKey(d))) localStorage.setItem('bb2_history_'+dateKey(d),JSON.stringify(demoOrders(d,3+Math.floor(Math.random()*4))));
+}
+
+function saveOrders(){
+  localStorage.setItem('bb2_orders', JSON.stringify(orders));
+  localStorage.setItem('bb2_last_date', todayKey());
+}
+
+// Returns all orders across today + historical days
+function getAllHistoricalOrders(){
+  const result=[];
+  // Today
+  const today=JSON.parse(localStorage.getItem('bb2_orders')||'[]');
+  result.push(...today);
+  // Past days from history keys
+  for(let i=0;i<localStorage.length;i++){
+    const k=localStorage.key(i);
+    if(k&&k.startsWith('bb2_history_')){
+      try{
+        const day=JSON.parse(localStorage.getItem(k)||'[]');
+        result.push(...day);
+      }catch(e){}
+    }
+  }
+  return result;
+}
+
+// Returns orders from a date range (timestamps)
+function getOrdersInRange(msFrom, msTo){
+  return getAllHistoricalOrders().filter(o=>o.timestamp>=msFrom&&o.timestamp<=msTo);
+}
+
+// Revenue stats helpers
+function startOfDay(d){const x=new Date(d);x.setHours(0,0,0,0);return x.getTime();}
+function startOfDaysAgo(n){const d=new Date();d.setDate(d.getDate()-n);d.setHours(0,0,0,0);return d.getTime();}
+
+function getRevenueStats(){
+  const now=Date.now();
+  const todayStart=startOfDay(new Date());
+  const yesterdayStart=startOfDaysAgo(1);
+  const yesterdayEnd=todayStart-1;
+  const last7Start=startOfDaysAgo(6); // 6 days ago + today = 7 days
+  const last30Start=startOfDaysAgo(29);
+
+  const allOrders=getAllHistoricalOrders().filter(o=>o.status!=='cancelado');
+
+  function stats(orders){
+    const rev=orders.reduce((a,o)=>a+o.total,0);
+    return{count:orders.length, rev, avg:orders.length?rev/orders.length:0};
+  }
+
+  return{
+    hoy:      stats(allOrders.filter(o=>o.timestamp>=todayStart)),
+    ayer:     stats(allOrders.filter(o=>o.timestamp>=yesterdayStart&&o.timestamp<=yesterdayEnd)),
+    sem:      stats(allOrders.filter(o=>o.timestamp>=last7Start)),
+    mes:      stats(allOrders.filter(o=>o.timestamp>=last30Start)),
+  };
+}
+
+// ── INIT ──────────────────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded',()=>{
+  checkMidnightReset();
+  renderFeatured();renderCats();renderMenu("Todo");updCount();
+  document.getElementById('addr-group').style.display='block';
+  // Check for midnight every 30 seconds
+  setInterval(checkMidnightReset, 30000);
+});
+
+// ── PRODUCTS ──────────────────────────────────────────────────────────────────
 function renderFeatured(){
   document.getElementById('featured-grid').innerHTML=PRODUCTS.filter(p=>p.cat==="Hamburguesas").slice(0,4).map(p=>`
     <div class="pcard" onclick="openProd(${p.id})">
@@ -601,6 +900,7 @@ function renderMenu(cat){
     </div>`).join('');
 }
 
+// ── MODAL ─────────────────────────────────────────────────────────────────────
 function openProd(id){
   const p=PRODUCTS.find(x=>x.id===id);mProd=p;mQty=1;mExtras=[];
   document.getElementById('m-img').src=p.img;
@@ -626,6 +926,7 @@ function addFromModal(){
 }
 function qAdd(id){const p=PRODUCTS.find(x=>x.id===id);cart.push({id:p.id,name:p.name,img:p.img,unitPrice:p.price,qty:1,lineTotal:p.price,extras:[]});updCount();toast(p.name+' añadida');}
 
+// ── CART ──────────────────────────────────────────────────────────────────────
 function openCart(){document.getElementById('cart-ov').classList.add('open');document.getElementById('cart-sb').classList.add('open');document.body.style.overflow='hidden';renderCart();}
 function closeCart(){document.getElementById('cart-ov').classList.remove('open');document.getElementById('cart-sb').classList.remove('open');document.body.style.overflow='';}
 function renderCart(){
@@ -639,9 +940,45 @@ function cCQ(i,d){cart[i].qty=Math.max(1,cart[i].qty+d);cart[i].lineTotal=cart[i
 function dCI(i){cart.splice(i,1);renderCart();updCount();}
 function updCount(){document.getElementById('cart-count').textContent=cart.reduce((a,i)=>a+i.qty,0);}
 
-function oCO(){closeCart();if(!cart.length){toast('Añade productos primero');return;}updCS();document.getElementById('checkout-ov').classList.add('open');document.body.style.overflow='hidden';}
+// ── CHECKOUT ──────────────────────────────────────────────────────────────────
+function oCO(){
+  closeCart();
+  if(!cart.length){toast('Añade productos primero');return;}
+  // Reset payment UI to default (card)
+  payMethod='card';cashExact=false;cashAmount=0;
+  updCS();
+  document.getElementById('checkout-ov').classList.add('open');
+  document.body.style.overflow='hidden';
+  // Ensure pay-card is active, cash-detail hidden
+  setTimeout(()=>{
+    const pc=document.getElementById('pay-card'),ps=document.getElementById('pay-cash'),cd=document.getElementById('cash-detail');
+    if(pc)pc.classList.add('active');
+    if(ps)ps.classList.remove('active');
+    if(cd)cd.classList.remove('show');
+    const chk=document.getElementById('cash-exact-chk');
+    if(chk)chk.checked=false;
+    const aw=document.getElementById('cash-amount-wrap');
+    if(aw)aw.style.display='none';
+    const ca=document.getElementById('cash-amount');
+    if(ca)ca.value='';
+    const ci=document.getElementById('cash-change-info');
+    if(ci)ci.style.display='none';
+  },50);
+}
 function closeCO(){document.getElementById('checkout-ov').classList.remove('open');document.body.style.overflow='';}
-function setOT(t){oType=t;document.getElementById('ot-dom').classList.toggle('active',t==='domicilio');document.getElementById('ot-local').classList.toggle('active',t==='local');document.getElementById('addr-group').style.display=t==='domicilio'?'flex':'none';document.getElementById('dinfo-wrap').innerHTML='';shipCost=t==='domicilio'?1.99:0;updCS();}
+function setOT(t){
+  oType=t;
+  document.getElementById('ot-dom').classList.toggle('active',t==='domicilio');
+  document.getElementById('ot-local').classList.toggle('active',t==='local');
+  document.getElementById('addr-group').style.display=t==='domicilio'?'block':'none';
+  document.getElementById('dinfo-wrap').innerHTML='';
+  if(t==='domicilio'){
+    const cp=(document.getElementById('co-cp')||{}).value||'';
+    if(cp.length===5&&DELIVERY_ZONES[cp]) shipCost=DELIVERY_ZONES[cp].price;
+    else shipCost=1.99;
+  } else { shipCost=0; }
+  updCS();
+}
 function updCS(){
   const sub=cart.reduce((a,i)=>a+i.lineTotal,0),ship=oType==='domicilio'?shipCost:0;
   const si=document.getElementById('co-sum-items');
@@ -650,35 +987,116 @@ function updCS(){
   if(s)s.textContent=sub.toFixed(2)+'€';
   if(sh)sh.textContent=oType==='domicilio'?shipCost.toFixed(2)+'€':'Gratis';
   if(t)t.textContent=(sub+ship).toFixed(2)+'€';
+  // Refresh change calculation if cash is selected
+  if(payMethod==='cash'&&!cashExact){
+    const ca=document.getElementById('cash-amount');
+    if(ca&&ca.value) calcChange();
+  }
 }
-function calcDel(){
-  const addr=document.getElementById('co-addr').value.trim();if(addr.length<8)return;
-  const c=geoSim(addr),d=haversine(REST,c),rule=DRULES.find(r=>d<=r.max);
+function calcDelCP(){
+  const cp=(document.getElementById('co-cp').value||'').trim();
   const div=document.getElementById('dinfo-wrap');
-  if(!rule||rule.price===null){div.innerHTML=`<div class="dinfo warn">⚠ Fuera de zona de reparto (máx. 8 km)</div>`;shipCost=0;}
-  else{div.innerHTML=`<div class="dinfo">📍 ${d.toFixed(1)} km — Envío: <strong style="color:var(--greentext)">${rule.price.toFixed(2)} €</strong> (${rule.label})</div>`;shipCost=rule.price;}
+  if(cp.length<5){div.innerHTML='';shipCost=1.99;updCS();return;}
+  const zone=DELIVERY_ZONES[cp];
+  if(!zone){
+    div.innerHTML=`<div class="dinfo warn">⚠ Código postal <strong>${cp}</strong> fuera de nuestra zona de reparto. Prueba con otro CP o recoge en local.</div>`;
+    shipCost=0;
+  } else {
+    div.innerHTML=`<div class="dinfo">📍 <strong>${zone.label}</strong> — Envío: <strong style="color:var(--greentext)">${zone.price.toFixed(2)} €</strong></div>`;
+    shipCost=zone.price;
+  }
   updCS();
 }
-function haversine(a,b){const R=6371,dL=(b.lat-a.lat)*Math.PI/180,dG=(b.lng-a.lng)*Math.PI/180,x=Math.sin(dL/2)**2+Math.cos(a.lat*Math.PI/180)*Math.cos(b.lat*Math.PI/180)*Math.sin(dG/2)**2;return R*2*Math.atan2(Math.sqrt(x),Math.sqrt(1-x));}
-function geoSim(a){let h=0;for(const c of a)h=((h<<5)-h)+c.charCodeAt(0);return{lat:REST.lat+((h%1000/1000)-.5)*.12,lng:REST.lng+(((h>>3)%1000/1000)-.5)*.12};}
+
+// ── PLACE ORDER ───────────────────────────────────────────────────────────────
+// ── PAYMENT ──────────────────────────────────────────────────────────────────
+function setPayMethod(m){
+  payMethod=m;
+  document.getElementById('pay-card').classList.toggle('active',m==='card');
+  document.getElementById('pay-cash').classList.toggle('active',m==='cash');
+  const detail=document.getElementById('cash-detail');
+  detail.classList.toggle('show',m==='cash');
+  if(m==='card'){
+    // reset cash fields
+    const chk=document.getElementById('cash-exact-chk');
+    if(chk)chk.checked=false;
+    cashExact=false;
+    document.getElementById('cash-amount-wrap').style.display='none';
+    document.getElementById('cash-change-info').style.display='none';
+  }
+}
+function toggleCashExact(){
+  cashExact=document.getElementById('cash-exact-chk').checked;
+  const amWrap=document.getElementById('cash-amount-wrap');
+  amWrap.style.display=cashExact?'none':'flex';
+  amWrap.style.flexDirection='column';
+  document.getElementById('cash-change-info').style.display='none';
+  if(cashExact){
+    cashAmount=0;
+    const inp=document.getElementById('cash-amount');
+    if(inp)inp.value='';
+  }
+}
+function calcChange(){
+  const total=cart.reduce((a,i)=>a+i.lineTotal,0)+(oType==='domicilio'?shipCost:0);
+  const given=parseFloat(document.getElementById('cash-amount').value)||0;
+  cashAmount=given;
+  const infoDiv=document.getElementById('cash-change-info');
+  const valEl=document.getElementById('cash-change-val');
+  if(!given){infoDiv.style.display='none';return;}
+  infoDiv.style.display='flex';
+  const change=given-total;
+  if(change<0){
+    infoDiv.className='cash-change-info warn';
+    valEl.textContent='Importe insuficiente';
+  } else {
+    infoDiv.className='cash-change-info';
+    valEl.textContent=change.toFixed(2)+' €';
+  }
+}
 
 function placeOrder(){
   const name=document.getElementById('co-name').value.trim(),phone=document.getElementById('co-phone').value.trim();
-  const addr=oType==='domicilio'?document.getElementById('co-addr').value.trim():'Recogida en local';
+  const cp=oType==='domicilio'?(document.getElementById('co-cp').value||'').trim():'';
+  const calle=oType==='domicilio'?(document.getElementById('co-calle').value||'').trim():'';
+  const num=oType==='domicilio'?(document.getElementById('co-num').value||'').trim():'';
+  const addr=oType==='domicilio'?`${calle}${num?' '+num:''}, CP ${cp}`:'Recogida en local';
   const notes=document.getElementById('co-notes').value.trim();
   if(!name||!phone){toast('Rellena nombre y teléfono');return;}
-  if(oType==='domicilio'&&!addr){toast('Introduce tu dirección');return;}
+  if(oType==='domicilio'){
+    if(!cp||cp.length<5){toast('Introduce el código postal');return;}
+    if(!DELIVERY_ZONES[cp]){toast('Código postal fuera de zona de reparto');return;}
+    if(!calle){toast('Introduce la calle');return;}
+  }
+  // Validate payment
+  if(payMethod==='cash'&&!cashExact){
+    const total=cart.reduce((a,i)=>a+i.lineTotal,0)+(oType==='domicilio'?shipCost:0);
+    if(!cashAmount||cashAmount<=0){toast('Indica con cuánto vas a pagar en efectivo');return;}
+    if(cashAmount<total){toast('El importe no cubre el total del pedido');return;}
+  }
   const now=new Date(),tStr=String(now.getHours()).padStart(2,'0')+':'+String(now.getMinutes()).padStart(2,'0');
   const id='BB-'+Date.now().toString(36).toUpperCase().slice(-5);
   const sub=cart.reduce((a,i)=>a+i.lineTotal,0),ship=oType==='domicilio'?shipCost:0;
-  const order={id,name,phone,address:addr,notes,type:oType,items:[...cart],subtotal:sub,shipping:ship,total:sub+ship,status:'nuevos',time:tStr,timestamp:Date.now(),isNew:true};
-  orders.unshift(order);saveOrders();curOId=id;cart=[];updCount();closeCO();openSt(id);toast('¡Pedido confirmado! 🔥');simProg(id);
+  const total=sub+ship;
+  // Build payment info
+  let payInfo={method:payMethod};
+  if(payMethod==='cash'){
+    payInfo.exact=cashExact;
+    payInfo.amount=cashExact?total:cashAmount;
+    payInfo.change=cashExact?0:parseFloat((cashAmount-total).toFixed(2));
+  }
+  const order={id,name,phone,address:addr,notes,type:oType,items:[...cart],subtotal:sub,shipping:ship,total,payment:payInfo,status:'nuevos',time:tStr,timestamp:Date.now(),isNew:true};
+  orders.unshift(order);saveOrders();curOId=id;cart=[];updCount();
+  // Reset payment fields
+  payMethod='card';cashExact=false;cashAmount=0;
+  closeCO();openSt(id);toast('¡Pedido confirmado! 🔥');simProg(id);
 }
 
+// ── STATUS ────────────────────────────────────────────────────────────────────
 const STSTEPS=['nuevos','preparacion','listos','reparto','entregado'];
 const STLBLS=['Recibido','Confirmado','Cocinando','En reparto','Entregado'];
 const STTITLES={nuevos:'PEDIDO RECIBIDO',preparacion:'EN PREPARACIÓN',listos:'¡LISTO!',reparto:'EN CAMINO 🛵',entregado:'¡ENTREGADO!'};
-const STMSGS={nuevos:'Acabamos de recibir tu pedido. En breve lo confirmaremos.',preparacion:'Confirmado! Nuestros cocineros están en ello.',listos:'Tu pedido está listo y sale en breve.',reparto:'El repartidor está en camino.',entregado:'¡Buen provecho! Gracias por confiar en Brutal.'};
+const STMSGS={nuevos:'Acabamos de recibir tu pedido. En breve lo confirmaremos.',preparacion:'¡Confirmado! Nuestros cocineros están en ello.',listos:'Tu pedido está listo y sale en breve.',reparto:'El repartidor está en camino.',entregado:'¡Buen provecho! Gracias por confiar en Brutal.'};
 
 function openSt(id){const o=orders.find(x=>x.id===id);if(!o)return;document.getElementById('st-id').textContent='Pedido '+id;updSt(o.status);document.getElementById('st-ov').classList.add('open');}
 function updSt(status){
@@ -692,34 +1110,118 @@ function updSt(status){
   document.getElementById('st-title').textContent=STTITLES[status]||'';
   document.getElementById('st-msg').textContent=STMSGS[status]||'';
 }
-function simProg(id){const prog=['preparacion','listos','reparto','entregado'];let i=0;const iv=setInterval(()=>{const o=orders.find(x=>x.id===id);if(!o||i>=prog.length){clearInterval(iv);return;}o.status=prog[i++];o.isNew=false;saveOrders();if(curOId===id&&document.getElementById('st-ov').classList.contains('open'))updSt(o.status);if(o.status==='entregado')clearInterval(iv);},9000);}
-
-// ADMIN
-function openAdmin(){document.getElementById('adm-ov').classList.add('open');document.body.style.overflow='hidden';adminAuth?renderAdmPanel():renderAdmLogin();}
-function renderAdmLogin(){
-  document.getElementById('adm-inner').innerHTML=`<div class="adm-login"><div class="adm-login-box"><h2>ACCESO<br><span style="color:var(--greentext)">COCINA</span></h2><p>Panel interno de gestión de pedidos</p><div style="display:flex;flex-direction:column;gap:.75rem;margin-bottom:1rem"><input class="finput" type="email" id="adm-email" placeholder="admin@brutal.es" value="admin@brutal.es"/><input class="finput" type="password" id="adm-pw" placeholder="Contraseña" value="brutal2025"/></div><button class="btn-primary" style="width:100%;padding:.85rem" onclick="admLogin()">Entrar al panel</button><button style="background:none;border:none;color:var(--gray);margin-top:.9rem;font-size:.82rem;cursor:pointer" onclick="closeAdm()">Cancelar</button></div></div>`;
+function simProg(id){
+  const prog=['preparacion','listos','reparto','entregado'];let i=0;
+  const iv=setInterval(()=>{
+    const o=orders.find(x=>x.id===id);
+    if(!o||i>=prog.length){clearInterval(iv);return;}
+    o.status=prog[i++];o.isNew=false;saveOrders();
+    if(curOId===id&&document.getElementById('st-ov').classList.contains('open'))updSt(o.status);
+    if(o.status==='entregado')clearInterval(iv);
+  },9000);
 }
-function admLogin(){if(document.getElementById('adm-pw').value==='brutal2025'){adminAuth=true;renderAdmPanel();}else toast('Contraseña incorrecta');}
+
+// ── CANCEL CONFIRM ────────────────────────────────────────────────────────────
+function askCancel(id){
+  pendingCancelId=id;
+  const o=orders.find(x=>x.id===id);
+  const msg=document.getElementById('confirm-msg');
+  if(msg&&o) msg.textContent=`Pedido #${id.replace('BB-','')} de ${o.name}. Esta acción no se puede deshacer.`;
+  document.getElementById('confirm-ov').classList.add('open');
+}
+function closeConfirm(){
+  document.getElementById('confirm-ov').classList.remove('open');
+  pendingCancelId=null;
+}
+function confirmCancel(){
+  if(!pendingCancelId) return;
+  admSt(pendingCancelId,'cancelado');
+  closeConfirm();
+}
+
+// ── ADMIN ─────────────────────────────────────────────────────────────────────
+function openAdmin(){
+  document.getElementById('adm-ov').classList.add('open');
+  document.body.style.overflow='hidden';
+  // Unlock AudioContext on user gesture (browser requirement)
+  if(audioCtx&&audioCtx.state==='suspended') audioCtx.resume();
+  adminAuth?renderAdmPanel():renderAdmLogin();
+}
+function renderAdmLogin(){
+  document.getElementById('adm-inner').innerHTML=`
+    <div class="adm-login">
+      <div class="adm-login-box">
+        <h2>ACCESO<br><span style="color:var(--greentext)">COCINA</span></h2>
+        <p>Panel interno de gestión de pedidos</p>
+        <div style="display:flex;flex-direction:column;gap:.75rem;margin-bottom:1rem">
+          <input class="finput" type="email" id="adm-email" placeholder="admin@brutal.es" value="admin@brutal.es"/>
+          <input class="finput" type="password" id="adm-pw" placeholder="Contraseña" value="brutal2025"/>
+        </div>
+        <button class="btn-primary" style="width:100%;padding:.85rem" onclick="admLogin()">Entrar al panel</button>
+        <button style="background:none;border:none;color:var(--gray);margin-top:.9rem;font-size:.82rem;cursor:pointer" onclick="closeAdm()">Cancelar</button>
+      </div>
+    </div>`;
+}
+function admLogin(){
+  if(document.getElementById('adm-pw').value==='brutal2025'){adminAuth=true;renderAdmPanel();}
+  else toast('Contraseña incorrecta');
+}
 function closeAdm(){document.getElementById('adm-ov').classList.remove('open');document.body.style.overflow='';if(admTimer){clearInterval(admTimer);admTimer=null;}}
 
+let revTab='hoy'; // active revenue tab: 'hoy' | 'ayer' | 'sem' | 'mes'
+
 function renderAdmPanel(){
+  checkMidnightReset();
   const all=JSON.parse(localStorage.getItem('bb2_orders')||'[]');
-  const cols={nuevos:all.filter(o=>o.status==='nuevos'),preparacion:all.filter(o=>o.status==='preparacion'),listos:all.filter(o=>o.status==='listos'),entregado:all.filter(o=>['entregado','reparto','cancelado'].includes(o.status))};
-  const rev=all.reduce((a,o)=>a+o.total,0),avg=all.length?rev/all.length:0;
+  const cols={
+    nuevos:    all.filter(o=>o.status==='nuevos'),
+    preparacion:all.filter(o=>o.status==='preparacion'),
+    listos:    all.filter(o=>o.status==='listos'),
+    entregado: all.filter(o=>['entregado','reparto','cancelado'].includes(o.status))
+  };
+  // Today's popular items
   const ic={};all.forEach(o=>o.items.forEach(it=>{ic[it.name]=(ic[it.name]||0)+it.qty;}));
   const popular=Object.entries(ic).sort((a,b)=>b[1]-a[1]).slice(0,5);
   const maxP=popular.length?popular[0][1]:1;
-  const now=new Date(),ts=String(now.getHours()).padStart(2,'0')+':'+String(now.getMinutes()).padStart(2,'0')+':'+String(now.getSeconds()).padStart(2,'0');
+  const now=new Date();
+  const ts=String(now.getHours()).padStart(2,'0')+':'+String(now.getMinutes()).padStart(2,'0')+':'+String(now.getSeconds()).padStart(2,'0');
+  const rs=getRevenueStats();
+
+  function revTabHTML(key,label){
+    return`<button class="rev-tab${revTab===key?' active':''}" onclick="setRevTab('${key}')">${label}</button>`;
+  }
+  function revCardHTML(label,val,green=false,full=false){
+    return`<div class="rev-card${full?' full':''}"><p class="rev-card-label">${label}</p><p class="rev-card-val${green?' green':''}">${val}</p></div>`;
+  }
+  function buildRevSection(s){
+    return`
+      <div class="rev-cards">
+        ${revCardHTML('Pedidos',s.count)}
+        ${revCardHTML('Ticket medio',s.avg.toFixed(2)+' €',true)}
+        ${revCardHTML('Ingresos',s.rev.toFixed(2)+' €',true,true)}
+      </div>`;
+  }
 
   const sidebarHTML=()=>`
-    <p class="adm-sb-title">Resumen del día</p>
-    <div class="adm-sb-stat"><span class="adm-sb-stat-label">Total pedidos</span><span class="adm-sb-stat-val">${all.length}</span></div>
+    <p class="adm-sb-title" style="margin-bottom:.6rem">Ingresos</p>
+    <div class="rev-tabs">
+      ${revTabHTML('hoy','Hoy')}
+      ${revTabHTML('ayer','Ayer')}
+      ${revTabHTML('sem','7 días')}
+      ${revTabHTML('mes','30 días')}
+    </div>
+    <div id="rev-content">
+      ${ revTab==='hoy'  ? buildRevSection(rs.hoy)  :
+         revTab==='ayer' ? buildRevSection(rs.ayer) :
+         revTab==='sem'  ? buildRevSection(rs.sem)  :
+                           buildRevSection(rs.mes)  }
+    </div>
+    <hr class="rev-divider"/>
+    <p class="adm-sb-title">Hoy</p>
     <div class="adm-sb-stat"><span class="adm-sb-stat-label">En local</span><span class="adm-sb-stat-val">${all.filter(o=>o.type==='local').length}</span></div>
     <div class="adm-sb-stat"><span class="adm-sb-stat-label">Para llevar</span><span class="adm-sb-stat-val">${all.filter(o=>o.type==='llevar').length}</span></div>
     <div class="adm-sb-stat"><span class="adm-sb-stat-label">A domicilio</span><span class="adm-sb-stat-val">${all.filter(o=>o.type==='domicilio').length}</span></div>
-    <div class="adm-sb-stat"><span class="adm-sb-stat-label">Ticket medio</span><span class="adm-sb-stat-val green">${avg.toFixed(2)} €</span></div>
-    <div class="adm-sb-stat"><span class="adm-sb-stat-label">Facturado</span><span class="adm-sb-stat-val green">${rev.toFixed(2)} €</span></div>
-    ${popular.length?`<div class="adm-sb-section"><p class="adm-sb-title" style="margin-top:1rem">Más pedidos hoy</p><div class="adm-sb-popular">${popular.map(([nm,cnt])=>{const p=PRODUCTS.find(x=>x.name===nm);return`<div><div class="pop-item">${p?`<img class="pop-item-img" src="${p.img}" alt="${nm}"/>`:'<div class="pop-item-img" style="background:var(--black4)"></div>'}<span class="pop-item-name">${nm}</span><span class="pop-item-count">${cnt}×</span></div><div class="pop-bar"><div class="pop-bar-fill" style="width:${(cnt/maxP*100).toFixed(0)}%"></div></div></div>`;}).join('')}</div></div>`:''}`;
+    ${popular.length?`<hr class="rev-divider"/><p class="adm-sb-title">Más pedidos hoy</p><div class="adm-sb-popular">${popular.map(([nm,cnt])=>{const p=PRODUCTS.find(x=>x.name===nm);return`<div><div class="pop-item">${p?`<img class="pop-item-img" src="${p.img}" alt="${nm}"/>`:'<div class="pop-item-img" style="background:var(--black4)"></div>'}<span class="pop-item-name">${nm}</span><span class="pop-item-count">${cnt}×</span></div><div class="pop-bar"><div class="pop-bar-fill" style="width:${(cnt/maxP*100).toFixed(0)}%"></div></div></div>`;}).join('')}</div>`:''}`;
 
   document.getElementById('adm-inner').innerHTML=`
     <div class="adm-topbar">
@@ -729,6 +1231,7 @@ function renderAdmPanel(){
       <div class="adm-live"><span class="adm-live-dot"></span>Tiempo real activo</div>
       <div class="adm-topbar-right">
         <button class="adm-sim-btn" onclick="simOrder()">+ Simular pedido</button>
+        <button class="adm-sound-btn${soundEnabled?'':' muted'}" id="sound-btn" onclick="toggleSound()">${soundEnabled?'🔔 Sonido ON':'🔕 Sonido OFF'}</button>
         <button class="adm-logout-btn" onclick="admLogout()">Salir</button>
         <button class="adm-close-btn" onclick="closeAdm()">✕ Cerrar</button>
       </div>
@@ -749,73 +1252,113 @@ function renderAdmPanel(){
       <div class="adm-sidebar">${sidebarHTML()}</div>
     </div>
     <div class="adm-sb-toggle" onclick="toggleAdmSheet()">
-      <span>📊</span><span>Ver resumen del día</span><span id="adm-sheet-arrow">▲</span>
+      <span>📊</span><span>Resumen e ingresos</span><span id="adm-sheet-arrow">▲</span>
     </div>`;
 
-  // populate mobile sheet
   const sheet=document.getElementById('adm-sb-sheet');
   if(sheet) sheet.innerHTML=sidebarHTML();
 
   if(admTimer)clearInterval(admTimer);
-  admTimer=setInterval(()=>{const c=document.getElementById('adm-clock');if(c){const n=new Date();c.textContent=String(n.getHours()).padStart(2,'0')+':'+String(n.getMinutes()).padStart(2,'0')+':'+String(n.getSeconds()).padStart(2,'0');}},1000);
+  admTimer=setInterval(()=>{
+    const c=document.getElementById('adm-clock');
+    if(c){const n=new Date();c.textContent=String(n.getHours()).padStart(2,'0')+':'+String(n.getMinutes()).padStart(2,'0')+':'+String(n.getSeconds()).padStart(2,'0');}
+    // Midnight watch inside clock tick too
+    checkMidnightReset();
+  },1000);
 }
+
+function setRevTab(tab){
+  revTab=tab;
+  renderAdmPanel();
+}
+
 function toggleAdmSheet(){
-  const s=document.getElementById('adm-sb-sheet');
-  const a=document.getElementById('adm-sheet-arrow');
+  const s=document.getElementById('adm-sb-sheet'),a=document.getElementById('adm-sheet-arrow');
   if(!s)return;
   const open=s.classList.toggle('open');
   if(a)a.textContent=open?'▼':'▲';
 }
+
 function kbCol(title,col,dotCls,color){
-  return`<div class="kb-col"><div class="kb-col-hd"><span class="kb-col-dot ${dotCls}"></span><span class="kb-col-title" style="color:${color}">${title}</span><span class="kb-col-count">${col.length}</span></div><div class="kb-cards">${col.length?col.map(o=>kbCard(o)).join(''):'<div class="kb-empty">Sin pedidos</div>'}</div></div>`;
+  return`<div class="kb-col">
+    <div class="kb-col-hd"><span class="kb-col-dot ${dotCls}"></span><span class="kb-col-title" style="color:${color}">${title}</span><span class="kb-col-count">${col.length}</span></div>
+    <div class="kb-cards">${col.length?col.map(o=>kbCard(o)).join(''):'<div class="kb-empty">Sin pedidos</div>'}</div>
+  </div>`;
 }
+
 function kbCard(o){
   const tb={local:'badge-local',llevar:'badge-llevar',domicilio:'badge-domicilio'};
   const tl={local:'LOCAL',llevar:'LLEVAR',domicilio:'DOMICILIO'};
   const done=['entregado','reparto','cancelado'].includes(o.status);
-  return`<div class="kb-card${o.isNew?' is-new':''}">
+  return `<div class="kb-card${o.isNew?' is-new':''}">
     <div class="kb-card-top">
       <span class="kb-card-id">#${o.id.replace('BB-','')}</span>
       <span class="kb-type-badge ${tb[o.type]||'badge-local'}">${tl[o.type]||o.type}</span>
     </div>
-    <div class="kb-client"><span style="font-size:.72rem;opacity:.55;flex-shrink:0">👤</span><span class="kb-client-name">${o.name}</span></div>
+    <div class="kb-client"><span style="font-size:.78rem;opacity:.55;flex-shrink:0">👤</span><span class="kb-client-name">${o.name}</span></div>
     <div class="kb-client-info">📞 ${o.phone} &nbsp;🕐 ${o.time}</div>
-    <div class="kb-items">${o.items.map(it=>`
-      <div class="kb-item-row">
-        <span class="kb-item-name"><span class="kb-item-qty">×${it.qty}</span><span class="kb-item-name-text">${it.name}</span></span>
-        <span class="kb-item-price">${it.lineTotal.toFixed(2)} €</span>
-      </div>`).join('')}
+    <div class="kb-items">
+      ${o.items.map(it=>`
+        <div class="kb-item-row">
+          <span class="kb-item-name"><span class="kb-item-qty">×${it.qty}</span><span class="kb-item-name-text">${it.name}</span></span>
+          <span class="kb-item-price">${it.lineTotal.toFixed(2)} €</span>
+        </div>`).join('')}
     </div>
     ${o.notes?`<div class="kb-note">${o.notes}</div>`:''}
     <div class="kb-card-foot">
       <span class="kb-time">🕐 ${o.time}</span>
       <span class="kb-total">${o.total.toFixed(2)} €</span>
     </div>
+    ${o.payment?`<div style="display:flex;align-items:center;gap:.4rem;margin-top:.5rem;padding:.4rem .55rem;background:var(--black4);border-radius:var(--r3);border:1px solid var(--gray3)">
+      <span style="font-size:.82rem">${o.payment.method==='card'?'💳':'💵'}</span>
+      <span style="font-size:.74rem;color:var(--white2);font-weight:600">${o.payment.method==='card'?'Tarjeta (TPV)':o.payment.exact?'Efectivo — importe exacto':`Efectivo — paga con ${o.payment.amount.toFixed(2)} €`}</span>
+      ${o.payment.method==='cash'&&!o.payment.exact?`<span style="font-size:.74rem;color:var(--greentext);font-weight:700;margin-left:auto">Cambio: ${o.payment.change.toFixed(2)} €</span>`:''}
+    </div>`:''}
     ${!done?`<div class="kb-card-actions">
-      ${o.status==='nuevos'?`<button class="ka-btn ka-confirm" onclick="admSt('${o.id}','preparacion')">✓ Aceptar</button><button class="ka-btn ka-cancel" onclick="admSt('${o.id}','cancelado')">✕ Cancelar</button>`:''}
+      ${o.status==='nuevos'?`<button class="ka-btn ka-confirm" onclick="admSt('${o.id}','preparacion')">✓ Aceptar</button>`:''}
       ${o.status==='preparacion'?`<button class="ka-btn ka-ready" onclick="admSt('${o.id}','listos')">✓ Listo</button>`:''}
-      ${o.status==='listos'?`<button class="ka-btn ka-deliver" onclick="admSt('${o.id}','${o.type==='domicilio'?'reparto':'entregado'}')">🛵 Entregar</button>`:''}</div>`:''}
+      ${o.status==='listos'?`<button class="ka-btn ka-deliver" onclick="admSt('${o.id}','${o.type==='domicilio'?'reparto':'entregado'}')">🛵 Entregar</button>`:''}
+      <button class="ka-btn ka-cancel" onclick="askCancel('${o.id}')">✕ Cancelar</button>
+    </div>`:''}
   </div>`;
 }
+
 function admSt(id,st){
   const all=JSON.parse(localStorage.getItem('bb2_orders')||'[]'),o=all.find(x=>x.id===id);
   if(o){o.status=st;o.isNew=false;localStorage.setItem('bb2_orders',JSON.stringify(all));orders=all;}
   if(curOId===id&&document.getElementById('st-ov').classList.contains('open'))updSt(st);
-  renderAdmPanel();toast('Pedido '+id+' → '+st);
+  renderAdmPanel();
+  toast('Pedido '+id.replace('BB-','#')+' → '+st);
 }
+
 function admLogout(){adminAuth=false;closeAdm();}
+
 function simOrder(){
+  // Resume AudioContext after user gesture
+  if(audioCtx&&audioCtx.state==='suspended') audioCtx.resume();
   const names=["Carlos V.","Lucía M.","Rubén K.","Sara P.","Diego F."],types=["local","llevar","domicilio"];
   const p=PRODUCTS[Math.floor(Math.random()*3)];
   const now=new Date(),ts=String(now.getHours()).padStart(2,'0')+':'+String(now.getMinutes()).padStart(2,'0');
-  const o={id:'BB-'+Math.random().toString(36).substr(2,5).toUpperCase(),name:names[Math.floor(Math.random()*names.length)],phone:'60'+Math.floor(1e7+Math.random()*9e7),address:'',notes:Math.random()>.6?'Extra picante':'',type:types[Math.floor(Math.random()*types.length)],items:[{id:p.id,name:p.name,img:p.img,unitPrice:p.price,qty:1,lineTotal:p.price,extras:[]}],subtotal:p.price,shipping:0,total:p.price,status:'nuevos',time:ts,timestamp:Date.now(),isNew:true};
-  const all=JSON.parse(localStorage.getItem('bb2_orders')||'[]');all.unshift(o);localStorage.setItem('bb2_orders',JSON.stringify(all));orders=all;
-  renderAdmPanel();toast('Nuevo pedido: '+o.id+' 🔔');
+  const o={
+    id:'BB-'+Math.random().toString(36).substr(2,5).toUpperCase(),
+    name:names[Math.floor(Math.random()*names.length)],
+    phone:'60'+Math.floor(1e7+Math.random()*9e7),
+    address:'',notes:Math.random()>.6?'Extra picante':'',
+    type:types[Math.floor(Math.random()*types.length)],
+    items:[{id:p.id,name:p.name,img:p.img,unitPrice:p.price,qty:1,lineTotal:p.price,extras:[]}],
+    subtotal:p.price,shipping:0,total:p.price,
+    status:'nuevos',time:ts,timestamp:Date.now(),isNew:true
+  };
+  const all=JSON.parse(localStorage.getItem('bb2_orders')||'[]');
+  all.unshift(o);localStorage.setItem('bb2_orders',JSON.stringify(all));orders=all;
+  playNewOrderSound();   // 🔔 sound alert
+  renderAdmPanel();
+  toast('🔔 Nuevo pedido: #'+o.id.replace('BB-',''));
 }
 
+// ── UTILS ─────────────────────────────────────────────────────────────────────
 function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2700);}
 function toggleMob(){const l=document.querySelector('.nav-links');if(l.style.display==='flex'){l.style.display='';}else{l.style.cssText='display:flex;flex-direction:column;position:absolute;top:62px;left:0;right:0;background:var(--black2);border-bottom:1px solid var(--gray3);padding:1rem 5%;gap:1rem;z-index:99';}}
-document.getElementById('addr-group').style.display='flex';
 </script>
 </body>
 </html>
